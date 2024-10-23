@@ -1,0 +1,70 @@
+/* Overall Features Section Layout */
+.features-section {
+    padding: 60px 20px;
+    background-color: #fafafa; /* Soft background for a clean look */
+    color: #333;
+    text-align: center;
+    font-family: 'Lora', serif;
+  }
+  
+  .section-title {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    letter-spacing: 1.5px;
+  }
+  
+  /* Features Container */
+  .features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Individual Feature Item */
+  .feature-item {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 280px;
+    transition: all 0.3s ease;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-title {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #1e272e;
+    margin-bottom: 15px;
+  }
+  
+  .feature-description {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .features-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .feature-item {
+      max-width: 100%;
+    }
+  }
+  
