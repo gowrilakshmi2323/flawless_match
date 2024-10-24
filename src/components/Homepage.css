@@ -10,7 +10,7 @@
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 100vh;
+  height: auto; /* Maintain full height for larger displays */
   background-color: #f8f8f8;
   display: flex;
   justify-content: center;
@@ -67,6 +67,9 @@
 
 .cta-buttons {
   margin-top: 20px;
+  display: flex; /* Ensure buttons are in a row */
+  justify-content: center; /* Center buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap */
 }
 
 .cta-button {
@@ -190,19 +193,9 @@
 
   .cta-button {
     margin: 10px auto;
+    width: 80%; /* Ensure buttons have a consistent width */
   }
 }
-
-/* APK Download Button - Customize color */
-.download-apk {
-  background-color: #22cbff; /* Change this to any color you like */
-  color: white;
-}
-
-.download-apk:hover {
-  background-color: #19e6c4; /* Darken on hover */
-}
-
 
 @media (max-width: 480px) {
   .iphone-screenshots {
@@ -214,7 +207,7 @@
   }
 
   .hero-section {
-    height: auto; /* Allow the height to adjust based on content */
+    height: auto; /* Allow height to adjust based on content */
   }
 
   .tagline {
@@ -226,3 +219,13 @@
   }
 }
 
+/* APK Download Button - Customize color */
+.download-apk {
+  background-color: #22cbff; /* Change this to any color you like */
+  color: white;
+  padding: 12px 20px; /* Adjust padding for better appearance */
+}
+
+.download-apk:hover {
+  background-color: #19e6c4; /* Darken on hover */
+}
