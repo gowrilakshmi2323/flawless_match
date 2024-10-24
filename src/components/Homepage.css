@@ -1,121 +1,228 @@
 /* Overall layout */
 .homepage {
-    font-family: 'Lora', serif;  /* Use a serif font for sophistication */
-    text-align: center;
-    color: #333;
+  font-family: 'Lora', serif;
+  text-align: center;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+.tagline {
+  font-size: 3em;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+.sub-text {
+  font-size: 1.5em;
+  color: #fff;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.cta-buttons {
+  margin-top: 20px;
+}
+
+.cta-button {
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 500;
+  margin: 10px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.google-play {
+  background-color: #34a853;
+}
+
+.app-store {
+  background-color: #0071e3;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* iPhone Screenshots Layout */
+.iphone-screenshots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+.screenshot-image {
+  width: 120px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.screenshot-image:hover {
+  transform: scale(1.05);
+}
+
+/* Brief Description */
+.brief-description {
+  padding: 40px 20px;
+  background-color: #fafafa;
+  font-size: 1.2em;
+  line-height: 1.8em;
+  color: #444;
+}
+
+.brief-description p {
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  /* Hero Section */
-  .hero-section {
-    position: relative;
-    height: 100vh;
-    background-color: #f8f8f8; /* Subtle background for elegance */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.7); /* Darken the image for text readability */
-    z-index: -1;
+}
+
+/* Responsive Screenshots Layout */
+@media (max-width: 1200px) {
+  .iphone-screenshots {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on large tablets */
   }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Delicate dark overlay */
-    z-index: 0;
-  }
-  
-  /* Hero Content */
+
   .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    text-align: center;
+    padding: 0 40px; /* Increase padding for better readability on larger screens */
   }
-  
+
   .tagline {
-    font-size: 3em;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
+    font-size: 2.5em;
   }
-  
+
   .sub-text {
-    font-size: 1.5em;
-    color: #fff;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
+    font-size: 1.3em;
   }
-  
-  .cta-buttons {
-    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .iphone-screenshots {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller tablets and mobile */
   }
-  
-  .cta-button {
-    text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 30px;
-    color: white;
-    font-weight: 500;
-    margin: 10px;
-    display: inline-block;
-    transition: all 0.3s ease;
+
+  .screenshot-image {
+    width: 100px;
   }
-  
-  .google-play {
-    background-color: #34a853;
+
+  .hero-content {
+    padding: 0 20px;
   }
-  
-  .app-store {
-    background-color: #0071e3;
+
+  .tagline {
+    font-size: 2em;
   }
-  
-  .cta-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Brief Description */
-  .brief-description {
-    padding: 40px 20px;
-    background-color: #fafafa;
+
+  .sub-text {
     font-size: 1.2em;
-    line-height: 1.8em;
-    color: #444;
   }
-  
-  .brief-description p {
-    max-width: 800px;
-    margin: 0 auto;
-    opacity: 0;
-    animation: fadeIn 3s forwards;
+
+  .cta-buttons {
+    flex-direction: column;
   }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .cta-button {
+    margin: 10px auto;
   }
-  
+}
+
+/* APK Download Button - Customize color */
+.download-apk {
+  background-color: #22cbff; /* Change this to any color you like */
+  color: white;
+}
+
+.download-apk:hover {
+  background-color: #19e6c4; /* Darken on hover */
+}
+
+
+@media (max-width: 480px) {
+  .iphone-screenshots {
+    grid-template-columns: repeat(1, 1fr); /* Single column on very small screens */
+  }
+
+  .screenshot-image {
+    width: 90px;
+  }
+
+  .hero-section {
+    height: auto; /* Allow the height to adjust based on content */
+  }
+
+  .tagline {
+    font-size: 1.8em;
+  }
+
+  .sub-text {
+    font-size: 1em;
+  }
+}
+
